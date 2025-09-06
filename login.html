@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication page</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="login-container">
+    <img src="Nacos.jpg" alt="NACOS LOGO" class="logo">
+    <h1>DEPARTMENT OF IT FEDERAL UNIVERSITY DUTSE</h1>
+    <h2>Login</h2>
+    <div id="message-container"></div>
+    <form autocomplete="off">
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <a href="signup.html" class="signup-link">Don't have an account? Sign Up</a>
+  </div>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const usernameOrEmail = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const msgContainer = document.getElementById('message-container');
+
+      // Admin login
+      if (usernameOrEmail === 'Admin@IT' && password === 'InfoTech') {
+        msgContainer.innerHTML = '<div style="color:green;font-weight:600;margin-bottom:10px;">Login successful!</div>';
+        setTimeout(() => {
+          window.location.href = "Admin_dashboard.html";
+        }, 1200);
+        return;
+      }
+
+      // Student login
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const student = users.find(u =>
+        (u.username === usernameOrEmail || u.email === usernameOrEmail) &&
+        u.password === password
+      );
+
+      if (student) {
+        msgContainer.innerHTML = '<div style="color:green;font-weight:600;margin-bottom:10px;">Login successful!</div>';
+        setTimeout(() => {
+          window.location.href = "Student_dashboard.html";
+        }, 1200);
+      } else {
+        msgContainer.innerHTML = '<div style="color:red;font-weight:600;margin-bottom:10px;">Invalid username or password.</div>';
+      }
+    });
+  </script>
+</body>
+</html>

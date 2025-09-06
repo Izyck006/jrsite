@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Courses</title>
+    <link rel="stylesheet" href="student_dashboard.css">
+    <link rel="stylesheet" href="view-courses.css">
+    <!-- Font Awesome for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Static Sidebar -->
+    <aside class="fixed top-0 left-0 w-64 h-screen bg-gray-800 text-white flex flex-col">
+        <div class="p-6 border-b border-gray-700">
+            <h1 class="text-2xl font-bold text-white">Dashboard</h1>
+        </div>
+        <nav class="mt-6 flex-1">
+            <a href="Student_dashboard.html" class="block py-2.5 px-6 hover:bg-gray-700 rounded-l-lg transition duration-200"><i class="fas fa-home"></i> Home</a>
+            <div class="mt-4">
+                <span class="block py-2.5 px-6 text-gray-400 text-sm font-semibold"><i class="fas fa-book"></i> Course Registration</span>
+                <a href="register-courses.html" class="block py-2.5 px-6 ml-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-edit"></i> Register Courses</a>
+                <a href="view-courses.html" class="block py-2.5 px-6 ml-4 bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-list-alt"></i> View Courses</a>
+            </div>
+            <a href="complaint.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-exclamation-circle"></i> Submit Complaint</a>
+            <a href="student_newsletter.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-newspaper"></i> Newsletter</a>
+            <a href="university_calendar.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-calendar-alt"></i> University Calendar</a>
+            <a href="Student_dashboard.html#noteslide-section" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-sticky-note"></i> NoteSlide</a>
+            <a href="Student_Profile.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-user"></i> Profile</a>
+            <ul class="sidebar-list">
+                <li class="nav-item">
+                    <a href="login.html" id="logout-btn" class="w-full text-center py-3 px-6 bg-red-600 hover:bg-red-700 transition duration-200 mt-0">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 p-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Your Registered Courses</h1>
+        <div id="registered-courses-list" class="bg-white p-6 rounded-lg shadow-md">
+            <!-- Registered courses will be displayed here -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const courseListContainer = document.getElementById('registered-courses-list');
+            const registeredCourses = JSON.parse(localStorage.getItem('registeredCourses'));
+
+            if (registeredCourses && registeredCourses.length > 0) {
+                let courseHTML = '<h2 class="text-xl font-semibold mb-4">You are registered for:</h2><ul class="list-disc list-inside space-y-2">';
+                registeredCourses.forEach(code => {
+                    courseHTML += `<li class="text-gray-700">${code}</li>`;
+                });
+                courseHTML += '</ul>';
+                courseListContainer.innerHTML = courseHTML;
+            } else {
+                courseListContainer.innerHTML = '<p class="text-gray-500">No courses have been registered yet. Please go to the "Register Courses" page to make a selection.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users - Student Management System</title>
+    <link rel="stylesheet" href="Admin_dashboard.css">
+    <!-- Add Font Awesome for icons if not present -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- ...sidebar code from Admin_dashboard.html... -->
+            <div class="sidebar-header">
+                <h2>Admin</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="Admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="Manage_users.html" class="active"><i class="fas fa-users"></i> Manage Users</a></li>
+                    <li><a href="courses_upload.html"><i class="fas fa-book"></i> Upload Courses</a></li>
+                    <li><a href="System_settings.html"><i class="fas fa-cog"></i> System Settings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn"><i class="fas fa-newspaper"></i> Newsletter</a>
+                        <div class="dropdown-content">
+                            <a href="upload_newsletter.html"><i class="fas fa-upload"></i> Upload Newsletter</a>
+                            <a href="manage_newsletter.html"><i class="fas fa-tasks"></i> Manage Newsletter</a>
+                        </div>
+                    </li>
+                    <li><a href="calendar.html"><i class="fas fa-calendar"></i> Calendar</a></li>
+                    <li><a href="noteslide.html"><i class="fas fa-sticky-note"></i> NoteSlide</a></li>
+                    <li><a href="Admin_Profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Manage Users</h1>
+            </div>
+            <div class="card">
+                <h3>All Users</h3>
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sylvanus Johnson</td>
+                            <td>sylvanusjohnson@gmail.com</td>
+                            <td><span class="role role-student">Student</span></td>
+                            <td><span style="color: #00b140;">Active</span></td>
+                            <td>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ehimen Audu</td>
+                            <td>ehimenaudu@gmail.com</td>
+                            <td><span class="role role-classrep">Student</span></td>
+                            <td><span style="color: #d32f2f;">Inactive</span></td>
+                            <td>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- ...more users... -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="Admin_dashboard.js"></script>
+</body>
+</html>

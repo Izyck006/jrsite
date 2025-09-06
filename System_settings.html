@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings - Student Management System</title>
+    <link rel="stylesheet" href="Admin_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .settings-form label { display: block; margin-bottom: 8px; font-weight: 600; color: #006400; }
+        .settings-form input, .settings-form select {
+            width: 100%; padding: 10px; margin-bottom: 18px; border-radius: 6px; border: 1px solid #348134;
+        }
+        .settings-form button {
+            background: #00b140; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 600;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .settings-form button:hover { background: #006400; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- ...sidebar code from Admin_dashboard.html... -->
+            <div class="sidebar-header">
+                <h2>Admin</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="Admin_dashboard.html"><!-- Dashboard icon --> <i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="Manage_users.html"><!-- Users icon --> <i class="fas fa-users"></i> Manage Users</a></li>
+                    <li><a href="courses_upload.html"><!-- Book icon --> <i class="fas fa-book"></i> Upload Courses</a></li>
+                    <li><a href="System_settings.html" class="active"><!-- Cog icon --> <i class="fas fa-cog"></i> System Settings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn"><i class="fas fa-newspaper"></i> Newsletter</a>
+                        <div class="dropdown-content">
+                            <a href="upload_newsletter.html"><i class="fas fa-upload"></i> Upload Newsletter</a>
+                            <a href="manage_newsletter.html"><i class="fas fa-tasks"></i> Manage Newsletter</a>
+                        </div>
+                    </li>
+                    <li><a href="Admin_Profile.html"><!-- User icon --> <i class="fas fa-user"></i> Profile</a></li>
+                    <li class="nav-item"><a href="#" id="logout-btn"><!-- Sign out icon --> <i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>System Settings</h1>
+            </div>
+            <div class="card">
+                <h3>Update System Preferences</h3>
+                <form class="settings-form">
+                    <label for="schoolName">School Name</label>
+                    <input type="text" id="schoolName" value="Federal University Dutse">
+
+                    <label for="theme">Theme</label>
+                    <select id="theme">
+                        <option value="green">Green & White</option>
+                        <option value="blue">Blue</option>
+                    </select>
+
+                    <label for="notification">Notifications</label>
+                    <select id="notification">
+                        <option value="enabled">Enabled</option>
+                        <option value="disabled">Disabled</option>
+                    </select>
+
+                    <button type="submit">Save Settings</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.querySelector('.settings-form').addEventListener('submit', function(e){
+            e.preventDefault();
+            alert('Settings saved successfully!');
+        });
+    </script>
+</body>
+</html>

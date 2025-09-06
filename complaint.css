@@ -1,0 +1,265 @@
+/* Sidebar styles */
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 13rem;
+    height: 100vh;
+    background-color: #006400;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+aside .p-6 {
+    padding: 1.5rem;
+    border-bottom: 1px solid #374151;
+}
+
+aside h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav {
+    margin-top: 1.5rem;
+    flex: 1;
+}
+
+nav a,
+nav span {
+    display: block;
+    padding: 0.625rem 1.25rem;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0.5rem 0 0 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #00b140;
+    color: #fff;
+    outline: none;
+}
+
+nav a.active {
+    background-color: #00b140;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav span {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-left: 0;
+    margin-bottom: 0.25rem;
+    cursor: default;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-top: 0.5rem;
+}
+
+#logout-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 0.625rem 1.25rem;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 0.25rem;
+}
+
+#logout-btn:hover,
+#logout-btn:focus {
+    background-color: #00b140;
+    color: #fff;
+    outline: none;
+}
+
+#logout-btn i {
+    margin-right: 0.75rem;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+/* Main content styles */
+.main-container {
+    margin-left: 13rem;
+    padding: 2rem;
+    background: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1 {
+    font-size: 1.875rem;
+    color: #1f2937;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.complaint-form-container {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.complaint-form-container h2 {
+    font-size: 1.15rem;
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.complaint-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    font-weight: 600;
+}
+
+.complaint-form input,
+.complaint-form textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background: #f9fafb;
+    font-size: 1rem;
+    color: #1f2937;
+    transition: border 0.2s;
+    resize: vertical;
+}
+
+.complaint-form input:focus,
+.complaint-form textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.complaint-form button {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.complaint-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.complaint-success {
+    color: #16a34a;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        margin-left: 0;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .complaint-form-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+}
+@media (max-width: 1400px) {
+  .main-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  aside {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  .main-container {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .complaint-form-container {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .complaint-form-container {
+    padding: 0.8rem;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .complaint-form-container {
+    padding: 0.6rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 200px) {
+  .complaint-form-container {
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 100px) {
+  .complaint-form-container {
+    padding: 0.4rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+}

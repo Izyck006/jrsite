@@ -1,0 +1,274 @@
+/* Reset and base styles */
+body {
+    background-color: #f3f4f6;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    margin: 0;
+}
+
+/* Sidebar styles */
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16rem;
+    height: 100vh;
+    background-color: #006400;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+aside .p-6 {
+    padding: 1.5rem;
+    border-bottom: 1px solid #374151;
+}
+
+aside h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav {
+    margin-top: 1.5rem;
+    flex: 1;
+}
+
+nav a,
+nav span {
+    display: block;
+    padding: 0.625rem 1.5rem;
+    transition: background 0.2s;
+    border-radius: 0.5rem 0 0 0.5rem;
+    text-decoration: none;
+}
+
+nav a {
+    color: #fff;
+}
+
+nav a:hover {
+    background-color: #00b140;
+}
+
+nav a.bg-gray-700 {
+    background-color: #00b140;
+}
+
+nav span {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-left: 0;
+}
+
+nav a.ml-4 {
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+}
+
+a.w-full {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #dc2626;
+    color: #fff;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+a.w-full:hover {
+    background-color: #b91c1c;
+}
+
+/* Main content styles */
+main {
+    margin-left: 16rem;
+    padding: 2rem;
+}
+
+main h1 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+main p {
+    color: #374151;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.bg-white {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.text-gray-600 {
+    color: #4b5563;
+}
+
+.text-blue-600 {
+    color: #2563eb;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.text-blue-600:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+/* Utility classes */
+.rounded-lg {
+    border-radius: 0.75rem;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* Dropdown styles */
+.course-dropdown {
+    position: relative;
+}
+
+.course-dropdown-content {
+    display: none;
+}
+
+.course-dropdown:hover .course-dropdown-content,
+.course-dropdown:focus-within .course-dropdown-content {
+    display: block;
+}
+
+
+
+/* Optional: animate dropdown appearance */
+.course-dropdown-content a {
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-top: 0.5rem;
+}
+
+#logout-btn {
+    display: block;
+    width: auto;
+    text-align: left;
+    padding: 0.625rem 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+#logout-btn:hover {
+    background-color: #374151;
+    color: #fff;
+}
+
+#logout-btn i {
+    margin-right: 0.75rem;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+@media (max-width: 1400px) {
+  main {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  aside {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  main h1 {
+    font-size: 1.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  main h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 300px) {
+  main h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 200px) {
+  main h1 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 100px) {
+  main h1 {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="Admin_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Add specific styles for Admin Profile if needed */
+        .profile-form label { display: block; margin-bottom: 8px; font-weight: 600; color: #006400; }
+        .profile-form input, .profile-form select {
+            width: 100%; padding: 10px; margin-bottom: 18px; border-radius: 6px; border: 1px solid #e0ffe0;
+        }
+        .profile-form button {
+            background: #00b140; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 600;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .profile-form button:hover { background: #006400; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Name</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <div class="sidebar-menu">
+                <button class="hamburger-btn" id="sidebarHamburger" aria-label="Toggle navigation" style="display:none;">
+                    &#9776;
+                </button>
+                <ul>
+                    <li><a href="Admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="Manage_users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+                    <li><a href="courses_upload.html"><i class="fas fa-book"></i> Upload Courses</a></li>
+                    <li><a href="System_settings.html"><i class="fas fa-cog"></i> System Settings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn"><i class="fas fa-newspaper"></i> Newsletter</a>
+                        <div class="dropdown-content">
+                            <a href="upload_newsletter.html"><i class="fas fa-upload"></i> Upload Newsletter</a>
+                            <a href="manage_newsletter.html"><i class="fas fa-tasks"></i> Manage Newsletter</a>
+                        </div>
+                    </li>
+                    <li><a href="Profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Admin Profile</h1>
+                <div class="profile-dropdown">
+                    <div class="profile-btn">
+                        <img src="https://ui-avatars.com/api/?name=Admin+Name&background=4CAF50&color=fff" alt="Profile">
+                        <span>Admin Name</span>
+                    </div>
+                    <div class="profile-dropdown-content">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Update Your Profile Information</h3>
+                <form class="profile-form" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="admin_name">Admin Name:</label>
+                        <input type="text" id="admin_name" name="admin_name" value="Admin Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin_email">Email:</label>
+                        <input type="email" id="admin_email" name="admin_email" value="admin@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile_image">Profile Image:</label>
+                        <input type="file" id="profile_image" name="profile_image" accept="image/*">
+                    </div>
+                    <button type="submit" class="action-btn">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Admin_dashboard.js"></script>
+</body>
+</html>

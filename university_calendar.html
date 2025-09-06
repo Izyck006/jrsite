@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Calendar</title>
+    <link rel="stylesheet" href="student_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Basic styling for the image container */
+        #calendar-image-display-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #calendar-image-display {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #no-calendar-image-message {
+            color: #888;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Static Sidebar -->
+    <aside class="fixed top-0 left-0 w-64 h-screen bg-gray-800 text-white flex flex-col">
+        <div class="p-6 border-b border-gray-700">
+            <h1 class="text-2xl font-bold text-white">Dashboard</h1>
+        </div>
+        <nav class="mt-6 flex-1">
+            <a href="Student_dashboard.html" class="block py-2.5 px-6 hover:bg-gray-700 rounded-l-lg transition duration-200"><i class="fas fa-home"></i> Home</a>
+            <div class="course-dropdown mt-4">
+                <span class="block py-2.5 px-6 text-gray-400 text-sm font-semibold cursor-pointer"><i class="fas fa-book"></i> Course Registration</span>
+                <div class="course-dropdown-content">
+                    <a href="register-courses.html" class="block py-2.5 px-6 ml-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-edit"></i> Register Courses</a>
+                    <a href="view-courses.html" class="block py-2.5 px-6 ml-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-list-alt"></i> View Courses</a>
+                </div>
+            </div>
+            <a href="complaint.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-exclamation-circle"></i> Submit Complaint</a>
+            <a href="student_newsletter.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-newspaper"></i> Newsletter</a>
+            <a href="university_calendar.html" class="block py-2.5 px-6 mt-4 bg-gray-700 rounded-l-lg transition duration-200"><i class="fas fa-calendar-alt"></i> University Calendar</a>
+            <a href="Student_dashboard.html#noteslide-section" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-sticky-note"></i> NoteSlide</a>
+            <a href="Student_Profile.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-user"></i> Profile</a>
+            <ul class="sidebar-list">
+                <li class="nav-item">
+                    <a href="login.html" id="logout-btn" class="w-full text-center py-3 px-6 bg-red-600 hover:bg-red-700 transition duration-200 mt-0">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 p-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">University Calendar</h1>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div id="calendar-image-display-container">
+                <img id="calendar-image-display" src="" alt="University Calendar Image" style="display: none;">
+                <p id="no-calendar-image-message">No calendar image uploaded yet. Please check back later.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="university_calendar.js"></script>
+</body>
+</html>

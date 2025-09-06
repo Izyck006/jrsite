@@ -1,0 +1,187 @@
+body {
+  background-image: url('../images/Nacos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps background fixed during scroll */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+}
+
+.signup-container {
+      max-width: 370px;
+      margin: 50px auto;
+      padding: 30px 24px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #333;
+      border-radius: 20px;  background: rgba(255, 255, 255, 0.1);
+    }
+
+    .signup-container img.logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 80px;
+    }
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #147718;
+    }
+    .signup-container label {
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+      font-weight: 500;
+    }
+    .signup-container input[type="text"],
+    .signup-container input[type="email"],
+    .signup-container input[type="password"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .signup-container button {
+      width: 100%;
+      padding: 10px;
+      background: #147718;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .signup-container button:hover {
+      background: #36a33c;
+    }
+    .signup-container .login-link {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+      color: #147718;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+    .signup-container .login-link:hover {
+      text-decoration: underline;
+    }
+    
+    .signup-container .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+
+h1 {
+  color: #218838; /* Blends with green */
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  body {
+    background-size: 350px;
+  }
+
+  .signup-container input[type="text"],
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    width: 350px;
+    height: 32px;
+    padding: 4px 6px;
+    font-size: 0.8em;
+  }
+
+  .login-container {
+    max-width: 450px;
+    padding: 50px 40px;
+  }
+  .login-container h2 {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    margin: 20px 8px;
+    padding: 18px 6px;
+    max-width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(30, 212, 39, 0.15);
+  }
+  .signup-container h2 {
+    font-size: 1.3em;
+    margin-bottom: 16px;
+  }
+  .signup-container input[type="text"],
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    font-size: 0.98em;
+    padding: 8px 6px;
+    margin-bottom: 12px;
+  }
+  .signup-container button {
+    font-size: 0.98em;
+    padding: 9px;
+  }
+  .signup-container .login-link {
+    font-size: 0.9em;
+    margin-top: 12px;
+  }
+   .signup-container img.logo {
+    max-width: 70px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .signup-container {
+    padding: 8px 2px;
+  }
+  .signup-container h2 {
+    font-size: 1.1em;
+  }
+}
+  .signup-container input[type="text"],
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    font-size: 0.9em;
+    padding: 6px 4px;
+  }
+  .signup-container button {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+
+.email-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px; /* To maintain spacing */
+}
+
+.email-container input {
+  padding-right: 80px; /* Make space for the button */
+  width: 100%;
+  margin-bottom: 0; /* Remove default margin */
+}

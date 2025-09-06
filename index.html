@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WELCOME TO FEDERAL UNIVERSITY DUTSE</title>
+
+    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header class="header">
+      <nav
+        class="nav a"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background-color: #fff;
+          padding: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          height: 60px;
+          align-items: center;
+          display: flex;
+          justify-content: space-around;
+          font-size: 1.2rem;
+        "
+      >
+        <!-- Hamburger for mobile nav -->
+        <button id="navHamburger" style="display:none; background:none; border:none; font-size:2rem; color:#006400; cursor:pointer;">
+          &#9776;
+        </button>
+        <div id="navLinks" style="display:flex; gap:18px;">
+          <a href="#about">About</a>
+          <a href="#news">News & Events</a>
+          <a href="#faculty">Faculty</a>
+          <a href="#courses">Courses</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+          <a href="login.html" type="button">Login</a>
+        </div>
+      </nav>
+      <div class="header-content">
+        <img
+          src="Nacos.jpg"
+          alt="school logo"
+          style="width: 100px; height: 100px; border: none; border-radius: 50px"
+        />
+        <h1>FEDERAL UNIVERSITY DUTSE</h1>
+        <h2>WELCOME TO INFORMATION TECHNOLOGY DEPARTMENT</h2>
+      </div>
+    </header>
+    <main class="container">
+      <section id="about">
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="mission-vision">
+          <div class="box mission">
+            <h3>Our Mission</h3>
+            <p>
+              To provide exceptional education in information technology through
+              innovative teaching, cutting-edge research, and meaningful
+              community engagement. We strive to prepare students for leadership
+              roles in the digital economy.
+            </p>
+          </div>
+          <div class="box vision">
+            <h3>Our Vision</h3>
+            <p>
+              To be a globally recognized center of excellence in IT education
+              and research, known for producing graduates who are ethical
+              leaders, innovative problem solvers, and catalysts for positive
+              change in the digital world.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="news">
+        <h2 class="section-title">News & Events</h2>
+        <div class="flex-container">
+          <div class="card">
+            <h3>HISTORY OF IT DEPARTMENT!</h3>
+            <p>
+              The IT department at Federal University Dutse (FUD) has evolved
+              significantly since the university's establishment in 2011.
+              Initially, the core IT functions were likely managed within a
+              smaller unit, possibly under the Registrar's office or a general
+              support services department. The Computer Science Department,
+              which later became the Faculty of Computing, played a crucial role
+              in developing the university's IT infrastructure and expertise
+            </p>
+            <p><small>Posted: July 2025</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faculty">
+        <h2 class="section-title">Faculty Profiles</h2>
+        <div class="flex-container">
+          <div class="card">
+            <h3>DR. SALIM AHMAD</h3>
+            <p>Head of Department</p>
+          </div>
+          <div class="card">
+            <h3>MALLAM AHMAD ABDULLAHI</h3>
+            <p>level coordinator IT DEPARTMENT LEVEL 200</p>
+          </div>
+          <div class="card">
+            <h3>MALLAM AHMAD ABDULLAHI</h3>
+            <p>Lecturer, system analysis and design</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-grid">
+          <img src="JERRY.jpg" alt="STUDENT PIC" />
+          <img src="kawu.png" alt="STUNDENT PIC" />
+          <img src="ABDUL SHEHU.png" alt="Team leader" />
+
+          <img src="" alt="stundent pic" />
+        </div>
+      </section>
+
+      <section id="courses">
+        <h2 class="section-title">Courses Offered</h2>
+        <div class="flex-container">
+          <div class="card">
+            <h3>CIT210: Systems analysis and design</h3>
+            <p>3 Credit Hours</p>
+          </div>
+          <div class="card">
+            <h3>CIT220: Web Development</h3>
+            <p>3 Credit Hours</p>
+          </div>
+          <div class="card">
+            <h3>CIT 206: digital forensics</h3>
+            <p>3 Credit Hours</p>
+          </div>
+          <div class="card">
+            <h3>COS 202: computer programming</h3>
+            <p>3 Credit Hours</p>
+          </div>
+          <div class="card">
+            <h3>CIT208: business data analysis</h3>
+            <p>3 Credit Hours</p>
+          </div>
+          <div class="card">
+            <h3>IFT 212: computer architecture</h3>
+            <p>2 Credit Hours</p>
+          </div>
+          <div class="card">
+            <h3>INS 202: human computer interface</h3>
+            <p>2 Credit Hours</p>
+          </div>
+          <div class="card">
+            <h3>GST 223: INTRO TO ENTERPRENURE</h3>
+            <p>2 Credit Hours</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="login-contact">
+        <div class="flex-container">
+          <div id="contact" class="form-box">
+            <h2 class="section-title" style="font-size: 1.8rem">Contact Us</h2>
+            <form>
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+              <textarea placeholder="Your Message" rows="4" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+            <div style="text-align: center; margin-top: 20px">
+              <p>
+                <b>Address:</b> FUD Dept. of IT, Dutse, Jigawa State, Nigeria
+              </p>
+              <p><b>Email:</b> itdept@fud.edu.ng</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <marquee behavior="scroll" direction="left">
+        <p>
+          © 2025 FUD Department of Information Technology. All Rights Reserved.
+        </p>
+      </marquee>
+    </footer>
+
+    <script>
+      function redirectUser(event) {
+        // Prevents the form from actually submitting and reloading the page
+        event.preventDefault();
+        let rolePage = document.getElementById("role").value;
+        // In a real application, you would perform validation here
+        alert("Redirecting to " + rolePage + "...");
+        // window.location.href = rolePage; // This line would redirect the user
+      }
+
+      // Hamburger nav toggle for mobile
+      function handleNavHamburger() {
+        const navHamburger = document.getElementById('navHamburger');
+        const navLinks = document.getElementById('navLinks');
+        function updateNavVisibility() {
+          if (window.innerWidth <= 700) {
+            navHamburger.style.display = 'block';
+            navLinks.classList.remove('show');
+          } else {
+            navHamburger.style.display = 'none';
+            navLinks.classList.remove('show');
+            navLinks.style.display = 'flex';
+          }
+        }
+        navHamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+        window.addEventListener('resize', updateNavVisibility);
+        updateNavVisibility();
+      }
+      document.addEventListener('DOMContentLoaded', handleNavHamburger);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Home</title>
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="student_dashboard.css">
+    <!-- Font Awesome for logout icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Static Sidebar -->
+    <aside class="fixed top-0 left-0 w-64 h-screen bg-gray-800 text-white flex flex-col">
+        <div class="p-6 border-b border-gray-700">
+            <h1 class="text-2xl font-bold text-white">Dashboard</h1>
+        </div>
+        <nav class="mt-6 flex-1">
+            <a href="Student_dashboard.html" class="block py-2.5 px-6 bg-gray-700 rounded-l-lg transition duration-200"><i class="fas fa-home"></i> Home</a>
+            <div class="course-dropdown mt-4">
+                <span class="block py-2.5 px-6 text-gray-400 text-sm font-semibold cursor-pointer"><i class="fas fa-book"></i> Course Registration</span>
+                <div class="course-dropdown-content">
+                    <a href="register-courses.html" class="block py-2.5 px-6 ml-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-edit"></i> Register Courses</a>
+                    <a href="view-courses.html" class="block py-2.5 px-6 ml-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-list-alt"></i> View Courses</a>
+                </div>
+            </div>
+            <a href="complaint.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-exclamation-circle"></i> Submit Complaint</a>
+            <a href="student_newsletter.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-newspaper"></i> Newsletter</a>
+            <a href="university_calendar.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-calendar-alt"></i> University Calendar</a>
+            <a href="#" id="noteslide-nav-link" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-sticky-note"></i> NoteSlide</a>
+            <a href="Student_Profile.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-user"></i> Profile</a>
+            <ul class="sidebar-list">
+                <li class="nav-item">
+                    <a href="login.html" id="logout-btn" class="w-full text-center py-3 px-6 bg-red-600 hover:bg-red-700 transition duration-200 mt-0">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 p-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Your Dashboard</h1>
+        <p class="text-gray-700">
+            Use the navigation menu on the left to manage your academic activities. You can register for new courses, view your current schedule, or submit a complaint if you encounter any issues.
+        </p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">Quick Actions</h2>
+                <p class="text-gray-600">Jump right into your most common tasks.</p>
+                <div class="mt-4">
+                    <a href="register-courses.html" class="text-blue-600 hover:underline">Register for Courses &rarr;</a>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-2">Notifications</h2>
+                <p class="text-gray-600">No new notifications.</p>
+            </div>
+        </div>
+
+        <!-- NoteSlide Section (Initially Hidden) -->
+        <section id="noteslide-section" class="hidden mt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Lecture Slides</h2>
+            <div id="slides-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Lecture slides will be loaded here -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Sample Slide Title</h3>
+                    <p class="text-gray-600">Description of the sample slide.</p>
+                    <a href="#" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Download</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="Student_dashboard.js"></script>
+</body>
+</html>

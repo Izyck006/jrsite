@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registeration page</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div class="signup-container">
+    <img src="Nacos.jpg" alt="MSSN FUD Logo" class="logo">
+    <h1>DEPARTMENT OF IT FEDERAL UNIVERSITY DUTSE</h1>
+    <h2>Sign Up</h2>
+    <form>
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="regno">Registration Number</label>
+      <input type="text" id="regno" name="regno" required>
+
+      <label for="email">Email Address</label>
+      <div class="email-container">
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <div id="signup-button-container">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+    <a href="login.html" class="login-link">Already have an account? Login</a>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,695 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        /* Container */
+        .container {
+            display: flex;
+            min-height: 100vh;
+            background: #f8fff8;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #006400 0%, #00b140 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 32px 0 0 0;
+            box-shadow: 2px 0 8px rgba(0,100,0,0.08);
+        }
+        
+        .sidebar-header {
+            padding: 0 1.5rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .sidebar-header h2 {
+            margin: 0 0 8px 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .sidebar-header p {
+            margin: 0 0 24px 0;
+            font-size: 1rem;
+            color: #e0ffe0;
+        }
+        
+        .sidebar-menu {
+            padding: 1.5rem 0;
+        }
+        
+        .sidebar-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 18px;
+        }
+        
+        /* Style for newly added sidebar li (e.g., logout or other actions) */
+.sidebar-menu li.nav-item {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a#logout-btn {
+    display: flex;
+    align-items: center;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    text-align: left;
+    padding: 10px 24px;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.sidebar-menu a#logout-btn i {
+    margin-right: 12px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.sidebar-menu a#logout-btn:hover,
+.sidebar-menu a#logout-btn:focus,
+.sidebar-menu a#logout-btn.active {
+    background: #d32f2f;
+    color: #fff;
+    outline: none;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+        .sidebar-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.08rem;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        .sidebar-menu a.active,
+        .sidebar-menu a:hover {
+            background: #00b140;
+            color: #fff;
+        }
+        
+        .sidebar-menu i {
+            margin-right: 12px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 40px 32px;
+            background: #f8fff8;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        
+        .header h1 {
+            font-size: 1.5rem;
+            color: #006400;
+            font-weight: 700;
+        }
+        
+        .profile-dropdown {
+            position: relative;
+        }
+        
+        .profile-btn {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: #00b140;
+            color: #fff;
+            border-radius: 24px;
+            padding: 6px 16px;
+            transition: background 0.2s;
+        }
+        
+        .profile-btn img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .profile-btn span {
+            font-weight: 600;
+        }
+        
+        .profile-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 44px;
+            background: #fff;
+            min-width: 140px;
+            box-shadow: 0 2px 8px rgba(0,100,0,0.10);
+            border-radius: 8px;
+            z-index: 10;
+        }
+        
+        .profile-dropdown:hover .profile-dropdown-content {
+            display: block;
+        }
+        
+        .profile-dropdown-content a {
+            display: block;
+            padding: 12px 18px;
+            color: #006400;
+            text-decoration: none;
+            border-bottom: 1px solid #e0ffe0;
+            transition: background 0.2s;
+        }
+        
+        .profile-dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .profile-dropdown-content a:hover {
+            background: #e0ffe0;
+        }
+        
+        /* Dashboard Cards */
+        .dashboard-cards {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .count-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,100,0,0.08);
+            padding: 24px 32px;
+            flex: 1;
+            text-align: center;
+            border: 2px solid #e0ffe0;
+        }
+        
+        .count-card h3 {
+            margin: 0 0 12px 0;
+            color: #006400;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .count-card .number {
+            font-size: 2.2rem;
+            color: #00b140;
+            font-weight: 700;
+        }
+        
+        /* Recent Users Table */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,100,0,0.08);
+            padding: 24px;
+            border: 2px solid #e0ffe0;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: #006400;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        
+        .users-table th, .users-table td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid #e0ffe0;
+        }
+        
+        .users-table th {
+            background: #e0ffe0;
+            color: #006400;
+            font-weight: 600;
+        }
+        
+        .users-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .role {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #fff;
+            background: #00b140;
+        }
+        
+        .role-student { background: #00b140; }
+        .role-classrep { background: #006400; }
+        .role-lecturer { background: #228B22; }
+        .role-admin { background: #2e8b57; }
+        
+        .action-btn {
+            padding: 6px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #00b140;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 6px;
+            transition: background 0.2s;
+        }
+        
+        .action-btn:last-child {
+            margin-right: 0;
+        }
+        
+        .action-btn.edit-btn:hover {
+            background: #006400;
+        }
+        
+        .action-btn.delete-btn:hover {
+            background: #d32f2f;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1400px) {
+          .container {
+            max-width: 98vw;
+          }
+          .main-content {
+            padding: 32px 12px;
+          }
+          .sidebar {
+            width: 200px;
+            padding: 24px 0 0 0;
+          }
+          .card, .count-card {
+            max-width: 90vw;
+            padding: 20px;
+          }
+        }
+        
+        @media (max-width: 900px) {
+          .dashboard-cards {
+            flex-direction: column;
+            gap: 16px;
+          }
+          .main-content {
+            padding: 24px 8px;
+          }
+          .sidebar {
+            width: 180px;
+            padding: 20px 0 0 0;
+          }
+        }
+        
+        @media (max-width: 700px) {
+          .container {
+            flex-direction: column;
+            max-width: 100vw;
+          }
+          .main-content {
+            padding: 10px 2px;
+          }
+          .sidebar {
+            width: 100vw;
+            padding: 10px 0;
+          }
+          .card, .count-card {
+            padding: 10px !important;
+            margin: 8px;
+            max-width: 98vw;
+            font-size: 1rem;
+          }
+          .users-table th, .users-table td {
+            padding: 8px 4px;
+            font-size: 0.95rem;
+          }
+        }
+        
+        @media (max-width: 500px) {
+          .main-content {
+            padding: 4px 1px;
+          }
+          .sidebar {
+            width: 100vw;
+            padding: 6px 0;
+          }
+          .card, .count-card {
+            padding: 6px !important;
+            margin: 4px;
+            font-size: 0.95rem;
+          }
+          .users-table th, .users-table td {
+            padding: 6px 2px;
+            font-size: 0.9rem;
+          }
+        }
+        
+        @media (max-width: 400px) {
+          .card, .count-card {
+            padding: 4px !important;
+            margin: 2px;
+            font-size: 0.9rem;
+          }
+          .users-table th, .users-table td {
+            padding: 4px 1px;
+            font-size: 0.85rem;
+          }
+        }
+        
+        @media (max-width: 300px) {
+          .card, .count-card {
+            padding: 2px !important;
+            margin: 1px;
+            font-size: 0.85rem;
+          }
+          .users-table th, .users-table td {
+            padding: 2px 0;
+            font-size: 0.8rem;
+          }
+        }
+        
+        @media (max-width: 200px) {
+          .card, .count-card {
+            padding: 1px !important;
+            margin: 0;
+            font-size: 0.8rem;
+          }
+          .users-table th, .users-table td {
+            padding: 1px 0;
+            font-size: 0.75rem;
+          }
+        }
+        
+        @media (max-width: 100px) {
+          .card, .count-card {
+            padding: 0 !important;
+            margin: 0;
+            font-size: 0.7rem;
+          }
+          .users-table th, .users-table td {
+            padding: 0;
+            font-size: 0.7rem;
+          }
+        }
+        
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        }
+        .hamburger span {
+        height: 4px;
+        width: 26px;
+        background: #fff;
+        margin: 4px 0;
+        border-radius: 2px;
+        display: block;
+        transition: 0.3s;
+        }
+
+        /* Show hamburger and hide nav on mobile */
+        @media (max-width: 600px) {
+        .hamburger {
+            display: flex;
+        }
+        nav ul {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 1em;
+            background: #147718;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            padding: 16px 0;
+            z-index: 100;
+        }
+        nav ul.active {
+            display: flex;
+        }
+        }
+
+        /* Hamburger for sidebar menu at <=699px */
+@media (max-width: 699px) {
+  .sidebar-menu ul {
+    display: none;
+    flex-direction: column;
+    background: #00b140;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 16px rgba(0,100,0,0.12);
+  }
+  .sidebar-menu.active ul {
+    display: flex;
+  }
+  .sidebar-menu {
+    position: relative;
+  }
+  .sidebar-menu .hamburger-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 8px 24px;
+    width: 100%;
+  }
+  .sidebar-menu li {
+    margin-bottom: 0;
+    border-bottom: 1px solid #006400;
+  }
+  .sidebar-menu li:last-child {
+    border-bottom: none;
+  }
+  .sidebar-menu a {
+    padding: 16px 0;
+    font-size: 1.1rem;
+    color: #fff;
+    background: none;
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  .sidebar-menu a.active,
+  .sidebar-menu a:hover {
+    background: #fff;
+    color: #006400;
+  }
+}
+
+/* Hide hamburger and show nav normally on wider screens */
+@media (min-width: 700px) {
+  .sidebar-menu .hamburger-btn {
+    display: none !important;
+  }
+  .sidebar-menu ul {
+    display: flex !important;
+    flex-direction: column;
+    position: static;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+/* Sidebar menu li and a styles */
+.sidebar-menu li,
+.sidebar-menu li.nav-item {
+    margin-bottom: 18px;
+    
+}
+
+/* Style for Upload Courses li */
+.sidebar-menu a[href*="courses_upload.html"] {
+    display: flex;
+    align-items: center;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    text-align: left;
+    padding: 10px 24px;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.sidebar-menu a[href*="courses_upload.html"] i {
+    margin-right: 12px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.sidebar-menu a[href*="courses_upload.html"]:hover,
+.sidebar-menu a[href*="courses_upload.html"].active {
+    background: #00b140;
+    color: #fff;
+    outline: none;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Logout button hover stays red */
+.sidebar-menu a#logout-btn:hover,
+.sidebar-menu a#logout-btn:focus,
+.sidebar-menu a#logout-btn.active {
+    background: #d32f2f;
+    color: #fff;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 10px 24px;
+    font-size: 1.08rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it takes full width of sidebar */
+    text-align: left;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropbtn i {
+    margin-right: 12px;
+}
+
+/* The container <li> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ensure it takes full width of sidebar */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #006400; /* Darker green for dropdown background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0; /* Align with the parent */
+    width: 100%; /* Take full width of parent dropdown */
+    border-radius: 0 0 6px 6px; /* Rounded corners at bottom */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #00b140;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #006400;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0ffe0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background: #00b140;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #006400;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="Admin_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin</h2>
+                <p>Admin Dashboard</p>
+            </div>
+            <div class="sidebar-menu">
+                <button class="hamburger-btn" id="sidebarHamburger" aria-label="Toggle navigation" style="display:none;">
+                    &#9776;
+                </button>
+                <ul>
+                    <li><a href="Admin_dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="Manage_users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+                    <li><a href="courses_upload.html"><i class="fas fa-book"></i> Upload Courses</a></li>
+                    <li><a href="System_settings.html"><i class="fas fa-cog"></i> System Settings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn"><i class="fas fa-newspaper"></i> Newsletter</a>
+                        <div class="dropdown-content">
+                            <a href="upload_newsletter.html"><i class="fas fa-upload"></i> Upload Newsletter</a>
+                            <a href="manage_newsletter.html"><i class="fas fa-tasks"></i> Manage Newsletter</a>
+                        </div>
+                    </li>
+                    <li><a href="Admin_Profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Admin Profile</h1>
+                <div class="profile-dropdown">
+                    <div class="profile-btn">
+                        <img src="https://ui-avatars.com/api/?name=Admin+Name&background=4CAF50&color=fff" alt="Profile">
+                        <span>Admin</span>
+                    </div>
+                    <div class="profile-dropdown-content">
+                        <a href="Admin_Profile.html"><i class="fas fa-user"></i> Profile</a>
+                        <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Admin Profile Details:</h2>
+                
+                <!-- Add admin profile fields here -->
+                <div class="profile-field">
+                    <label>Name:</label>
+                    <span>Admin</span>
+                </div>
+                <div class="profile-field">
+                    <label>Email:</label>
+                    <span>admin@gmail.com</span>
+                </div>
+                <div class="profile-field">
+                    <label>Role:</label>
+                    <span>Administrator</span>
+                </div>
+                <button class="edit-profile-btn">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+    <script src="Admin_dashboard.js"></script>
+</body>
+</html>

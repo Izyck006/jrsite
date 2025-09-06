@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+    <link rel="stylesheet" href="student_dashboard.css">
+    <link rel="stylesheet" href="register-courses.css">
+    <!-- Font Awesome for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Static Sidebar -->
+    <aside>
+        <div class="p-6 border-b">
+            <h1>Dashboard</h1>
+        </div>
+        <nav>
+            <a href="Student_dashboard.html" class="block py-2.5 px-6 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-home"></i> Home</a>
+            <div class="course-dropdown mt-4">
+                <span class="block py-2.5 px-6 text-gray-400 text-sm font-semibold cursor-pointer"><i class="fas fa-book"></i> Course Registration</span>
+                <a href="register-courses.html" class="block py-2.5 px-6 ml-4 active"><i class="fas fa-edit"></i> Register Courses</a>
+                <a href="view-courses.html" class="block py-2.5 px-6 ml-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-list-alt"></i> View Courses</a>
+            </div>
+            <a href="complaint.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-exclamation-circle"></i> Submit Complaint</a>
+            <a href="student_newsletter.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-newspaper"></i> Newsletter</a>
+            <a href="university_calendar.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-calendar-alt"></i> University Calendar</a>
+            <a href="Student_dashboard.html#noteslide-section" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-sticky-note"></i> NoteSlide</a>
+            <a href="Student_Profile.html" class="block py-2.5 px-6 mt-4 hover:bg-gray-700 rounded-lg transition duration-200"><i class="fas fa-user"></i> Profile</a>
+            <ul class="sidebar-list">
+                <li class="nav-item">
+                    <a href="login.html" id="logout-btn" class="w-full text-center py-3 px-6 bg-red-600 hover:bg-red-700 transition duration-200 mt-0">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <h1>Course Registration</h1>
+        <div>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody id="course-table-body">
+                    <!-- Rows will be inserted by JavaScript -->
+                </tbody>
+            </table>
+            <button id="save-button">Save Selection</button>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Course data
+            let courses = JSON.parse(localStorage.getItem('adminUploadedCourses') || '[]');
+
+            const tableBody = document.getElementById('course-table-body');
+
+            function renderTable() {
+                tableBody.innerHTML = '';
+                courses.forEach(course => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><input type="checkbox" data-code="${course.code}" class="course-checkbox"></td>
+                        <td>${course.code}</td>
+                        <td>${course.name}</td>
+                        <td>${course.credits}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            renderTable();
+
+            // Handle save button click
+            const saveButton = document.getElementById('save-button');
+            saveButton.addEventListener('click', () => {
+                const checkedBoxes = document.querySelectorAll('.course-checkbox:checked');
+                const selectedCourseCodes = Array.from(checkedBoxes).map(checkbox => checkbox.dataset.code);
+                if (selectedCourseCodes.length === 0) {
+                    alert('Please select at least one course.');
+                } else {
+                    alert(`Selected courses: ${selectedCourseCodes.join(', ')}`);
+                    localStorage.setItem('registeredCourses', JSON.stringify(selectedCourseCodes));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

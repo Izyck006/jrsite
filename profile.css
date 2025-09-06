@@ -1,0 +1,179 @@
+/* General body styling */
+body {
+    background-color: #f0fdf4; /* Light green-white background */
+    font-family: sans-serif;
+}
+
+/* Main content area */
+.ml-64 {
+    margin-left: 16rem; /* Adjust for sidebar width */
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+/* Profile form container */
+.bg-white {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+/* Form labels */
+label {
+    color: #16a34a; /* Green color for labels */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Form inputs */
+input[type="file"],
+input[type="date"],
+input[type="text"] {
+    border: 1px solid #d1fae5; /* Light green border */
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: #333;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input[type="file"]:focus,
+input[type="date"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #16a34a; /* Darker green on focus */
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+select {
+    border: 1px solid #d1fae5; /* Light green border */
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: #333;
+    transition: border-color 0.2s ease-in-out;
+    /* Ensure background and arrow are consistent */
+    background-color: #fff;
+    -webkit-appearance: none; /* Remove default arrow on WebKit browsers */
+    -moz-appearance: none;    /* Remove default arrow on Firefox */
+    appearance: none;         /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23006400%22%20d%3D%22M287%2C197.9l-13.9%2C13.9L146.2%2C81.8L13.9%2C211.8L0%2C197.9l146.2%2C-146.2L287%2C197.9z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+}
+
+select:focus {
+    outline: none;
+    border-color: #16a34a; /* Darker green on focus */
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+/* Submit button */
+button[type="submit"] {
+    background-color: #16a34a; /* Green button */
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #15803d; /* Darker green on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ml-64 {
+        margin-left: 0; /* Remove sidebar margin on small screens */
+    }
+
+    aside {
+        position: relative; /* Make sidebar static on small screens */
+        width: 100%;
+        height: auto;
+    }
+
+    nav a, .course-dropdown span {
+        text-align: center;
+        padding: 1rem 0.5rem;
+    }
+
+    .course-dropdown-content a {
+        padding-left: 2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .p-6 {
+        padding: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+@media (max-width: 1400px) {
+  .ml-64 {
+    margin-left: 14rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .ml-64 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .p-8 {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .p-8 {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .p-6 {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 200px) {
+  .p-6 {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 100px) {
+  .p-6 {
+    padding: 0.5rem;
+  }
+}
